@@ -274,7 +274,7 @@ function App() {
 
                     {selectedTerm.image && (
                       <figure className="in-text-image">
-                        <img src={selectedTerm.image} alt={selectedTerm.title} />
+                        <img src={selectedTerm.image.startsWith('/') ? import.meta.env.BASE_URL + selectedTerm.image.slice(1) : selectedTerm.image} alt={selectedTerm.title} />
                         <figcaption>
                           Image Source: 
                           {selectedTerm.imageCitation.includes(' - http') ? (
