@@ -191,7 +191,7 @@ function App() {
                 <div className="card" key={term.id} onClick={() => openModal(term)}>
                   <div className="card-image-wrapper">
                     {term.image ? (
-                      <img src={term.image} alt={term.title} className="card-image" loading="lazy" />
+                      <img src={term.image.startsWith('/') ? import.meta.env.BASE_URL + term.image.slice(1) : term.image} alt={term.title} className="card-image" loading="lazy" />
                     ) : (
                       <div className="no-image-placeholder">
                         <BrainCircuit />
