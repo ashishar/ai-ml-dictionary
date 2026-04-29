@@ -99,7 +99,7 @@ function App() {
       if (part.startsWith('$') && part.endsWith('$')) {
         return <InlineMath key={index} math={part.slice(1, -1)} />;
       }
-      return <span key={index}>{part}</span>;
+      return <span key={index} style={{ whiteSpace: 'pre-wrap' }}>{part}</span>;
     });
   };
 
